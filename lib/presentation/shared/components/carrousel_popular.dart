@@ -2,20 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../style/colors/colors.dart';
+import '../../../style/colors/colors.dart';
 
 Widget popular({
   required imagePath,
   required locationName,
   required address,
   required kilometre,
-
-}) => Container(
+}) =>
+    Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.all(
-            Radius.circular(5.0)
-            ),
+        borderRadius: BorderRadius.all(Radius.circular(5.0)),
       ),
       height: 200,
       width: 120,
@@ -35,28 +33,25 @@ Widget popular({
             ),
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
                 address,
-                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 6, fontWeight: FontWeight.w600),
               ),
               Container(
-                  height: 20,
-                  width: 20,
+                  height: 15,
+                  width: 15,
+                  alignment: Alignment.center,
                   decoration: BoxDecoration(
-                      color: AppColors.primarypurple.withOpacity(0.3),
+                      color: AppColors.primarypurple.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(30)),
-                  child: SizedBox(
-                    height: 5,
-                    width: 5,
-                    child: SvgPicture.asset(
-                      height: 5, width: 5,
-                      fit: BoxFit.scaleDown,
+                  child: SvgPicture.asset(
+                    height: 8,
+                    fit: BoxFit.fitHeight,
 
-                      "assets/svg/li_bookmark-plus.svg", //asset location
-                      color: AppColors.primarypurple, //svg color
-                    ),
+                    "assets/svg/li_bookmark-plus.svg", //asset location
+                    color: AppColors.primarypurple, //svg color
                   ))
             ],
           ),
@@ -64,7 +59,7 @@ Widget popular({
             height: 5,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               SizedBox(
                 height: 10,
@@ -73,21 +68,24 @@ Widget popular({
                   fit: BoxFit.scaleDown,
 
                   "assets/svg/li_map-pin.svg", //asset location
-                  color: AppColors.primarypurple, //svg color
+                  color: AppColors.primarypurple,
+                  //svg color
                 ),
               ),
               Text(
                 locationName,
                 style: TextStyle(
-                    fontSize: 8,
+                    fontSize: 6,
                     fontWeight: FontWeight.w400,
                     color: AppColors.textgray),
               ),
-              SizedBox(width: 40,),
+              SizedBox(
+                width: 40,
+              ),
               Text(
                 kilometre,
                 style: TextStyle(
-                    fontSize: 8,
+                    fontSize: 6,
                     fontWeight: FontWeight.w700,
                     color: AppColors.primarypurple),
               )

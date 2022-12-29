@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/app_router.dart';
+import 'package:travel_app/presentation/modules/home/home_places.dart';
 
-import 'modules/home/home_places.dart';
+
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp(approuter: AppRouter(),));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+
+final AppRouter approuter;
+
+
+const MyApp({Key? key, required this.approuter,}):super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomePlaces(),
+     onGenerateRoute:approuter.onGenerateRoute ,
     );
   }
 }

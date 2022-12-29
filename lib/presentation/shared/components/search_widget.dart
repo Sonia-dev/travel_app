@@ -2,17 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../style/colors/colors.dart';
+import '../../../style/colors/colors.dart';
 
 Widget searchWidget(
         {required width, required TextEditingController controller}) =>
     Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
           width: width,
           height: 30,
-
-          //margin: const EdgeInsets.fromLTRB(16, 16, 16, 16),
           child: TextField(
             controller: controller,
             decoration: InputDecoration(
@@ -37,6 +36,7 @@ Widget searchWidget(
           child: SvgPicture.asset(
             'assets/svg/li_settings.svg',
             color: Colors.white,
+            fit: BoxFit.scaleDown,
           ),
         )
       ],

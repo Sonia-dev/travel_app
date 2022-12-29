@@ -1,0 +1,9 @@
+
+
+
+
+
+const charactersScreen = '/';
+
+
+const exchangeScreen = '/';
